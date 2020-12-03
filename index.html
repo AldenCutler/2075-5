@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>2075-5</title>
+  
+<style>
+  body {
+    background: lightgrey;
+  }
+
+  #timer {
+    font-size: 32px;
+  }
+
+  #timerButton {
+    transition-duration: 0.2s;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  #timerButton:hover {
+    background-color: #4caf50; /* Green */
+    color: white;
+  }
+
+  #message {
+    font-size: 32px;
+    color: red;
+  }
+</style>
+</head>
+
+<body translate="no" >
+  <h1>Timer: <span id="timer">0</span></h1>
+<button id="timerButton" onclick="updateTimer()">Click here to start the timer.</button>
+<button id="timerButton" onclick="resetTimer()">Click here to reset the timer.</button>
+<div id="message"></div>
+   
+<script id="rendered-js" >
+console.clear();
+let timer = 0;
+
+function addOne() {
+  timer = timer + 1;
+  //console.log(timer);
+  let element = document.getElementById("timer");
+  element.innerHTML = timer;
+}
+
+function updateTimer() {
+  setInterval(addOne, 1000);
+}
+
+function resetTimer() {
+  timer = 0;
+  clearInterval(addOne);
+}
+    </script>
+</body>
+</html>
